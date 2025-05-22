@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.var4.MainController">
+
+    <top>
+        <VBox spacing="10" padding="10">
+            <Text text="Генератор персонажей RPG" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+            <HBox spacing="10">
+                <Label text="Имя:" />
+                <TextField fx:id="nameField" prefWidth="150"/>
+                <Button fx:id="randomNameButton" text="Случайное имя" onAction="#onRandomName"/>
+
+                <Label text="Пол:" />
+                <ComboBox fx:id="genderBox" prefWidth="120"/>
+
+                <Label text="Уровень:" />
+                <Spinner fx:id="levelSpinner" prefWidth="80"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Раса:" />
+                <ComboBox fx:id="raceBox" prefWidth="120"/>
+
+                <Label text="Класс:" />
+                <ComboBox fx:id="classBox" prefWidth="120"/>
+
+                <Button fx:id="generateButton" text="Случайная генерация" onAction="#onGenerate"/>
+                <Button fx:id="addButton" text="Добавить персонажа" onAction="#onAdd"/>
+                <Button fx:id="deleteButton" text="Удалить" onAction="#onDelete"/>
+                <Button fx:id="saveButton" text="Сохранить в Excel" onAction="#onSave"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Имя" prefWidth="100"/>
+                <TableColumn fx:id="genderColumn" text="Пол" prefWidth="80"/>
+                <TableColumn fx:id="raceColumn" text="Раса" prefWidth="100"/>
+                <TableColumn fx:id="classColumn" text="Класс" prefWidth="100"/>
+                <TableColumn fx:id="strengthColumn" text="Сила"/>
+                <TableColumn fx:id="agilityColumn" text="Ловкость"/>
+                <TableColumn fx:id="intelligenceColumn" text="Интеллект"/>
+                <TableColumn fx:id="enduranceColumn" text="Выносливость"/>
+                <TableColumn fx:id="charismaColumn" text="Харизма"/>
+                <TableColumn fx:id="luckColumn" text="Удача"/>
+                <TableColumn fx:id="levelColumn" text="Уровень"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
